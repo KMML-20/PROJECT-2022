@@ -1,0 +1,5 @@
+# GUI
+from tkinter import*
+import time
+# CREATE SCREEN
+scrn=Tk()
