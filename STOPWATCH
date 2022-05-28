@@ -37,6 +37,9 @@ def stop():
         timer=None
         stop.place()
         resume.place()
+def reset():
+    reset.place()
+    global 
         
     
         
