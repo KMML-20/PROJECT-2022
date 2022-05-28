@@ -3,3 +3,40 @@ from tkinter import*
 import time
 # CREATE SCREEN
 scrn=Tk()
+scrn.configure("black")
+scrn.title("STOPWATCH")
+scrn.geometry("600x300")
+#SET
+hours=0
+minutes=0
+seconds=0
+tm1=0
+tm2=0
+a=0
+b=0
+#FUNCTIONS
+def pole(mist,v,m):
+    Run=run(scrn,mist=mist,fg="darkblue",bg="black",font=("gothic",12,"bold"))
+    Run.place(x=v,y=m,width=50,height=30)
+    
+def start():
+    start.place() 
+    global hours,minutes,seconds,tm1,timer,tm2
+    tm2=int(time.time())
+    if tm2!=tm1:
+        tm1=tm2
+        if seconds==60:
+            minutes=minutes+1
+        elif minutes==60:
+            hours=hours+1
+def stop():
+    stop.place()
+    global timer
+    if timer is not None:
+        scrn.after(timer)
+        timer=None
+        stop.place()
+        resume.place()
+        
+    
+        
