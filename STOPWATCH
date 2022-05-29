@@ -27,16 +27,12 @@ def start():
     if tm2!=tm1:
         tm1=tm2
         
-        milliseconds+ 1
-        if milliseconds==1000:
-            seconds=seconds+1
-        elif seconds==60:
-            minutes=minutes+1
-          
-        elif minutes==60:
-            hours=hours+1
-        timer.config(text= f"{hours}:{minutes}:{seconds}:{milliseconds}")
-            
+        milliseconds+1
+        if seconds==60:
+            minutes= minutes+1
+        if minutes==60:
+            hours= hours+1
+        go.config(text= f"{hours}:{minutes}:{seconds}:{milliseconds}")
      
 def stop():
     stop.place()
@@ -54,10 +50,10 @@ def reset():
     seconds = 00
     minutes = 00
     hours = 00
-    timer.config(text= f"{hours}:{minutes}:{seconds}:{milliseconds}")
+    go.config(text= f"{hours}:{minutes}:{seconds}:{milliseconds}")
     timer.after(time)
         
 def lap():
     global milliseconds, seconds, minutes, hours, tm1, tm2, timer, a, b
     if a<9:
-        pole(
+        pole((
