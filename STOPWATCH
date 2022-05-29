@@ -3,13 +3,14 @@ from tkinter import*
 import time
 # CREATE SCREEN
 scrn=Tk()
-scrn.configure("black")
+scrn.configure(bg ="black")
 scrn.title("STOPWATCH")
 scrn.geometry("600x300")
 #SET
 hours=0
 minutes=0
 seconds=0
+milliseconds=0
 tm1=0
 tm2=0
 a=0
@@ -25,10 +26,18 @@ def start():
     tm2=int(time.time())
     if tm2!=tm1:
         tm1=tm2
-        if seconds==60:
+        
+        milliseconds+ 1
+        if milliseconds==1000:
+            seconds=seconds+1
+        elif seconds==60:
             minutes=minutes+1
+          
         elif minutes==60:
             hours=hours+1
+        timer.config(text= f"{hours}:{minutes}:{seconds}:{milliseconds}")
+            
+     
 def stop():
     stop.place()
     global timer
@@ -37,9 +46,18 @@ def stop():
         timer=None
         stop.place()
         resume.place()
+        
 def reset():
     reset.place()
-    global 
+    global milliseconds, seconds, minutes, hours
+    millisecond = 00
+    seconds = 00
+    minutes = 00
+    hours = 00
+    timer.config(text= f"{hours}:{minutes}:{seconds}:{milliseconds}")
+    timer.after(time)
         
-    
-        
+def lap():
+    global milliseconds, seconds, minutes, hours, tm1, tm2, timer, a, b
+    if a<9:
+        pole(
